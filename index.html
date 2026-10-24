@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio and professional profile for Roy Walters (Francisco Thompson), specializing in physical operations, mechanical troubleshooting, automotive diagnostics, and web development.">
+  <title>Roy Walters (Francisco Thompson) | Adaptive Operations & Tech Specialist</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-color: #f8fafc;
+      --accent-color: #38bdf8;
+      --accent-hover: #0284c7;
+      --text-muted: #94a3b8;
+      --border-color: #334155;
+      --badge-bg: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 2rem;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid var(--accent-color);
+      margin: 0 auto 1rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--card-bg);
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: var(--accent-color);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .names {
+      color: var(--accent-color);
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .contact-info {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-info a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .bio {
+      color: var(--text-muted);
+      max-width: 750px;
+      margin: 0 auto 1.5rem auto;
+      font-size: 1.05rem;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.4rem;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .logo-img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.25rem;
+      color: var(--text-color);
+    }
+
+    .journey-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      border: 1px solid var(--border-color);
+    }
+
+    .journey-card p {
+      margin-bottom: 1rem;
+    }
+
+    .journey-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-card {
+      background-color: var(--card-bg);
+      padding: 1.25rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .skill-card h3 {
+      color: var(--accent-color);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-card ul {
+      list-style-type: disc;
+      margin-left: 1.2rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .experience-item, .resume-item {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .experience-item:hover, .resume-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-color);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+      gap: 0.5rem;
+    }
+
+    .job-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    .company-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--badge-bg);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+    }
+
+    .experience-item ul {
+      margin-left: 1.2rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .experience-item li {
+      margin-bottom: 0.4rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.25rem;
+      border: 1px solid var(--border-color);
+    }
+
+    .project-card h3 {
+      color: var(--accent-color);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 3rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="avatar">RW</div>
+      <h1>Roy Walters</h1>
+      <p class="names">Preferred Name: Francisco Thompson | Nickname: Frank / Cisco</p>
+      
+      <p class="contact-info">
+        Boulder, CO &bull; 
+        <a href="tel:7317371326">(731) 737-1326</a> &bull; 
+        <a href="mailto:slawsummers@gmail.com">slawsummers@gmail.com</a>
+      </p>
+
+      <p class="bio">
+        High-adaptability specialist bridging physical operations, automotive & mechanical troubleshooting, plumbing/structural repair support, creative technical arts, and web development. Proven track record of executing critical logistics, resolving high-stress escalations, and mastering complex domain skills rapidly.
+      </p>
+
+      <div class="links">
+        <a href="https://github.com/slawsummers-web" target="_blank" class="btn">
+          <img src="https://cdn.simpleicons.org/github/0f172a" class="logo-img" alt="GitHub Logo">
+          GitHub Profile
+        </a>
+        <a href="https://www.linkedin.com/in/roy-walters-" target="_blank" class="btn">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/LinkedIn_icon.svg" class="logo-img" alt="LinkedIn Logo">
+          LinkedIn Profile
+        </a>
+      </div>
+    </header>
+
+    <section id="journey">
+      <h2>About My Journey & Resilience</h2>
+      <div class="journey-card">
+        <p>
+          Born in Tennessee and raised in Houston, Texas, my early life laid the foundation for my strong work ethic, adaptability, and self-reliance. Growing up in a dynamic environment taught me how to navigate diverse challenges, engage comfortably with people from all walks of life, and solve problems resourcefully using whatever tools were at hand.
+        </p>
+        <p>
+          My journey has taken me from seasonal operations in Kentucky across the country—through Montana, Washington State, and Nevada—before establishing my home in Colorado to pursue my passion for technology. Whether executing roadside automotive body & mechanical repairs, assisting under-slab foundation lifts, running independent body modification & artwork services, composing original music, or developing proprietary formula solutions like Basi-Lyxer, I bring resilience, creative precision, and a commitment to rapid skill mastery.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Core Technical, Operational & Creative Competencies</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Software & Web Development</h3>
+          <ul>
+            <li>HTML5 & Custom Dark CSS</li>
+            <li>JavaScript & Python</li>
+            <li>Git & GitHub Version Control</li>
+            <li>Command Line / Bash CLI</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Cybersecurity & Systems</h3>
+          <ul>
+            <li>System Troubleshooting</li>
+            <li>Linux OS Fundamentals</li>
+            <li>Access Control Concepts</li>
+            <li>Network Security Concepts</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Automotive & Mechanical Systems</h3>
+          <ul>
+            <li>Engine Diagnostics & Preventive Maintenance</li>
+            <li>Fluid Service, Filter & Brake Systems</li>
+            <li>Independent Bodywork & Component Replacement</li>
+            <li>Hand/Power Tool Operations & Technical Diagnostics</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Plumbing, Logistics & Operations</h3>
+          <ul>
+            <li>Foundation Lift & Piering Support</li>
+            <li>Certified Forklift Operation</li>
+            <li>Biohazard & Sanitation Protocol</li>
+            <li>Chain-of-Custody Documentation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Professional Work History</h2>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Freelance Automotive Mechanic</span>
+          <div class="company-badge">Independent / Self-Employed</div>
+        </div>
+        <ul>
+          <li>Performs comprehensive personal and freelance vehicle repairs, diagnostics, and routine maintenance under diverse working conditions.</li>
+          <li>Executes mechanical repairs, brake services, sensor/part replacements, and manual vehicle bodywork, including roadside emergency fixes.</li>
+          <li>Utilizes diagnostic equipment, mechanical layouts, and power tools to isolate and resolve mechanical faults efficiently.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Automotive Lube Technician</span>
+          <div class="company-badge">Jiffy Lube</div>
+        </div>
+        <ul>
+          <li>Performed fast-paced multi-point vehicle inspections, oil and fluid drains/refills, filter replacements, and tire pressure checks.</li>
+          <li>Communicated vehicle maintenance recommendations clearly to customers while maintaining strict safety, cleanliness, and efficiency standards.</li>
+          <li>Operated pit/bay equipment and pneumatic tools to service high volumes of vehicles daily.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Plumber’s Apprentice & Mechanical Support</span>
+          <div class="company-badge">Texas APS (APS Building Services)</div>
+        </div>
+        <ul>
+          <li>Supported foundation lift and leveling operations by excavating, access-tunneling, and installing flex-coupling piping beneath sunken concrete slabs.</li>
+          <li>Executed under-slab leak detection, drain line camera inspections, sewer main replacements, and pipe rerouting on residential/commercial properties.</li>
+          <li>Performed rough-in plumbing, underground piping, hydrostatic pressure testing, and clear-water drain/vent line installations.</li>
+          <li>Diagnosed structural, mechanical, and piping faults using heavy hand/power equipment and technical blueprints under demanding site conditions.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Freelance Piercing & Tattoo Artist / Custom Painter</span>
+          <div class="company-badge">Independent Studio</div>
+        </div>
+        <ul>
+          <li>Provided high-precision custom body modification, body art design, and custom canvas/surface painting services.</li>
+          <li>Maintained strict adherence to pathogen control, sanitation standards, sterilization protocols, and client consultation procedures.</li>
+          <li>Managed full client communication, custom stencil design, color mixing, and post-procedure care guidance.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Delivery Driver</span>
+          <div class="company-badge">Amazon</div>
+        </div>
+        <ul>
+          <li>Safely and efficiently navigated localized delivery routes to manage package distribution under strict time constraints.</li>
+          <li>Utilized mobile logistics tools to optimize delivery sequences, verify package tracking, and resolve real-time customer address issues.</li>
+          <li>Maintained high standards of customer satisfaction, package integrity, and safety compliance.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Inbound Customer Service Representative</span>
+          <div class="company-badge">Pink Energy</div>
+        </div>
+        <ul>
+          <li>Handled high-volume inbound communications, navigating complex client accounts and service inquiries.</li>
+          <li>Managed service escalations professionally while maintaining detailed records within enterprise CRM systems.</li>
+          <li>Collaborated across teams to troubleshoot billing, service, and installation questions for clients.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Freight Handler & Logistics Specialist</span>
+          <div class="company-badge">FedEx Freight</div>
+        </div>
+        <ul>
+          <li>Earned Forklift Operator Certification while handling heavy dock operations and freight distribution safely and efficiently.</li>
+          <li>Coordinated warehouse stock movement, package sorting, and freight handling in high-volume transport environments.</li>
+          <li>Operated material handling tools and enforced strict inventory organization and safety protocols.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Mortuary Transporter & Removal Specialist</span>
+          <div class="company-badge">DeathCall, LLC</div>
+        </div>
+        <ul>
+          <li>Executed 24/7 on-call first-call removals and specialized decedent transports across residential, clinical, hospice, and crime scene environments.</li>
+          <li>Maintained strict legal chain-of-custody documentation, release verifications, and compliance with state mortuary regulations and health codes.</li>
+          <li>Operated specialized transfer equipment safely while upholding rigorous OSHA bloodborne pathogen control and biohazard sanitation standards.</li>
+          <li>Coordinated logistics directly with medical examiners, law enforcement, funeral home directors, and dispatchers while practicing total professionalism, composure, and family empathy under high-stress conditions.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Seasonal Retail Operations Manager</span>
+        </div>
+        <ul>
+          <li>Managed seasonal retail inventory, customer transactions, and site setups under tight timelines.</li>
+          <li>Maintained strict adherence to local safety regulations and customer service standards.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects & Portfolio</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Basi-Lyxer (Proprietary Product Development)</h3>
+          <p>Concept, brand, and proprietary formulation development for Basi-Lyxer. Focused on product design, functional branding, and independent market positioning while maintaining complete intellectual property protection.</p>
+        </div>
+        <div class="project-card">
+          <h3>Personal Web Portal</h3>
+          <p>Modern personal portfolio built with clean semantic HTML5 markup and custom dark mode CSS, hosted live on GitHub Pages.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Licenses, Certifications & Work Authorization</h2>
+      <div class="resume-item">
+        <div class="job-header">
+          <span class="job-title">Forklift Operator Certification</span>
+          <div class="company-badge">FedEx Freight</div>
+        </div>
+        <p style="color: #94a3b8;">Certified operator with experience in dock loading, industrial material handling, and warehouse safety.</p>
+      </div>
+      <div class="resume-item">
+        <div class="job-header">
+          <span class="job-title">Valid Driver's License & Work Eligibility</span>
+        </div>
+        <p style="color: #94a3b8;">Valid State Driver's License | U.S. Citizen & Legally Authorized to Work in the United States.</p>
+      </div>
+      <div class="resume-item">
+        <div class="job-header">
+          <span class="job-title">Responsive Web Design Certification</span>
+          <div class="company-badge">freeCodeCamp</div>
+        </div>
+        <p style="color: #94a3b8;">Comprehensive coursework covering HTML5, CSS3, accessibility, and modern responsive layouts.</p>
+      </div>
+      <div class="resume-item">
+        <span class="job-title">Computer Science & Cybersecurity Studies</span>
+        <p style="color: #94a3b8; margin-top: 0.5rem;">Self-Directed Coursework, Linux System Administration, and Applied Cybersecurity Practical Labs.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Roy Walters (Francisco Thompson). All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
